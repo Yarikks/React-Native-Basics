@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, StyleSheet } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import CustomButton from '../components/CustomButton';
 
 const HomeScreen = ({ navigation }) => {
   const navigate = (route) => {
@@ -11,18 +11,11 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View>
       <Text style={styles.text}>HomeScreen</Text>
-
-      <TouchableOpacity style={styles.button} onPress={() => navigate('Components')}>
-        <Text style={styles.buttonText}>Go to Components</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button} onPress={() => navigate('List')}>
-        <Text style={styles.buttonText}>Go to List</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button} onPress={() => navigate('Image')}>
-        <Text style={styles.buttonText}>Go to Image</Text>
-      </TouchableOpacity>
+      <CustomButton text="Go to Components" onPress={() => navigate('Components')} />
+      <CustomButton text="Go to List" onPress={() => navigate('List')} />
+      <CustomButton text="Go to Image" onPress={() => navigate('Image')} />
+      <CustomButton text="Go to Color" onPress={() => navigate('Color')} />
+      <CustomButton text="Go to Text" onPress={() => navigate('Text')} />
     </View>
   );
 };
@@ -34,18 +27,6 @@ HomeScreen.propTypes = {
 const styles = StyleSheet.create({
   text: {
     fontSize: 30,
-    textAlign: 'center',
-  },
-  button: {
-    marginVertical: 20,
-    alignSelf: 'center',
-    padding: 10,
-    backgroundColor: 'black',
-    borderRadius: 12,
-    width: '50%',
-  },
-  buttonText: {
-    color: '#fff',
     textAlign: 'center',
   },
 });
